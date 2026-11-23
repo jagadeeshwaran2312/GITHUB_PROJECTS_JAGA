@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f1">
+  <meta name="description" content="Portfolio of Jagadeeshwaran A G, Computer Science Engineering student and Java developer.">
+  <title>Jagadeeshwaran A G — Java Developer</title>
+  <style>
+    :root {
+      --paper: #f7f6f1;
+      --ink: #202523;
+      --muted: #626b66;
+      --line: #c9cec8;
+      --green: #25483d;
+      --rust: #a34d32;
+      --white: #fffefa;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Segoe UI', Arial, sans-serif;
+      --page: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    a:hover { color: var(--rust); }
+    a:focus-visible { outline: 2px solid var(--rust); outline-offset: 4px; }
+    .skip-link { position: absolute; left: -9999px; top: 8px; padding: 8px 12px; background: var(--white); z-index: 5; }
+    .skip-link:focus { left: 8px; }
+    .wrap { width: min(var(--page), calc(100% - 48px)); margin-inline: auto; }
+    header { border-bottom: 1px solid var(--line); }
+    .nav {
+      min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .brand { font-family: var(--serif); font-weight: 700; font-size: 18px; letter-spacing: -.02em; text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; align-items: center; font-size: 13px; color: var(--muted); }
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover { color: var(--ink); }
+    main { overflow: hidden; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(230px, .8fr); gap: 64px; padding: 76px 0 66px; align-items: end; }
+    .eyebrow, .section-label, .meta, .project-index { text-transform: uppercase; letter-spacing: .11em; font-size: 11px; font-weight: 700; }
+    .eyebrow { color: var(--rust); margin: 0 0 18px; }
+    h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(42px, 6vw, 72px); line-height: 1.04; letter-spacing: -.045em; margin: 0; max-width: 720px; }
+    .hero-copy { max-width: 620px; color: var(--muted); font-size: 17px; margin: 22px 0 0; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 26px; font-size: 14px; }
+    .hero-links a { color: var(--green); font-weight: 600; }
+    .facts { border-left: 1px solid var(--line); padding-left: 24px; }
+    .fact { padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .fact:last-child { border-bottom: 0; }
+    .fact .meta { color: var(--muted); display: block; margin-bottom: 2px; font-size: 10px; }
+    .fact strong { font-family: var(--serif); font-size: 17px; font-weight: 500; }
+    section { border-top: 1px solid var(--line); padding: 42px 0 48px; }
+    .section-head { display: grid; grid-template-columns: 220px 1fr; gap: 30px; margin-bottom: 26px; align-items: start; }
+    .section-label { color: var(--rust); margin: 5px 0 0; }
+    h2 { font-family: var(--serif); font-size: 32px; line-height: 1.15; font-weight: 500; letter-spacing: -.025em; margin: 0; }
+    .section-intro { color: var(--muted); max-width: 620px; margin: 9px 0 0; font-size: 14px; }
+    .projects { border-top: 1px solid var(--line); }
+    .project { display: grid; grid-template-columns: 64px minmax(0, 1fr) 180px; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .project-index { color: var(--rust); padding-top: 4px; }
+    .project h3 { font-family: var(--serif); font-size: 22px; line-height: 1.2; font-weight: 500; margin: 0 0 7px; }
+    .project p { margin: 0; max-width: 690px; color: var(--muted); font-size: 14px; }
+    .stack { color: var(--green); text-align: right; font-size: 12px; line-height: 1.5; padding-top: 4px; }
+    .repo { display: inline-block; margin-top: 8px; color: var(--rust); font-size: 12px; font-weight: 600; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+    .timeline-item { border-top: 1px solid var(--line); padding: 18px 0 0; }
+    .timeline-item h3 { font-family: var(--serif); font-size: 21px; font-weight: 500; margin: 0 0 4px; }
+    .timeline-item p { color: var(--muted); font-size: 14px; margin: 0; }
+    .date { display: block; color: var(--rust); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 7px; font-weight: 700; }
+    .skill-list { border-top: 1px solid var(--line); }
+    .skill-row { display: grid; grid-template-columns: 190px 1fr; gap: 20px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .skill-row strong { font-weight: 600; }
+    .skill-row span { color: var(--muted); }
+    .credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; border-top: 1px solid var(--line); }
+    .credential { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .credential strong { display: block; font-weight: 600; }
+    .credential span { color: var(--muted); font-size: 13px; }
+    .activities { border-top: 1px solid var(--line); }
+    .activity { padding: 15px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; font-size: 14px; }
+    .activity span:last-child { color: var(--muted); text-align: right; }
+    footer { background: var(--green); color: #f7f6f1; padding: 42px 0; margin-top: 6px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: end; gap: 24px; }
+    footer h2 { font-size: 30px; }
+    footer p { margin: 8px 0 0; color: #d4ded8; font-size: 14px; }
+    footer a { color: #fffefa; }
+    .footer-links { display: flex; gap: 20px; font-size: 13px; }
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 32px, var(--page)); }
+      .nav { min-height: 66px; }
+      .nav-links { gap: 14px; font-size: 12px; }
+      .hero { grid-template-columns: 1fr; gap: 34px; padding: 54px 0 42px; }
+      .facts { border-left: 0; border-top: 1px solid var(--line); padding: 12px 0 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; }
+      .section-head { grid-template-columns: 1fr; gap: 8px; margin-bottom: 20px; }
+      .project { grid-template-columns: 34px minmax(0, 1fr); gap: 12px; }
+      .stack { grid-column: 2; text-align: left; padding-top: 0; }
+      .two-col { grid-template-columns: 1fr; gap: 34px; }
+      .skill-row { grid-template-columns: 145px 1fr; gap: 12px; }
+      .credentials { grid-template-columns: 1fr; }
+      .footer-inner { display: block; }
+      .footer-links { margin-top: 24px; }
+    }
+    @media (max-width: 420px) {
+      .brand { font-size: 16px; }
+      .nav-links { gap: 10px; }
+      .nav-links a:nth-child(3) { display: none; }
+      h1 { font-size: 43px; }
+      .skill-row { grid-template-columns: 1fr; gap: 1px; }
+      .activity { display: block; }
+      .activity span:last-child { display: block; text-align: left; margin-top: 3px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">Jagadeeshwaran A G</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content">
+    <div class="wrap" id="top">
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Computer Science Engineering · PSNA College</p>
+          <h1>Java applications for practical problems.</h1>
+          <p class="hero-copy">I’m a Computer Science Engineering student building desktop and data-management projects with Java, JavaFX, and Spring Boot. My recent work includes a grade tracker, a rule-based chatbot, and a hotel reservation app.</p>
+          <div class="hero-links">
+            <a href="https://drive.google.com/file/d/1GXqB3Z-YM1Tqw0vpgHXqEgB0hpOxBknW/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">View Resume ↗</a>
+            <a href="mailto:jagadeesh2waran@gmail.com">Email me ↗</a>
+            <a href="https://www.linkedin.com/in/jagadeeshwaran-ag" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="https://github.com/jagadeeshwaran2312" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+        <aside class="facts" aria-label="Profile details">
+          <div class="fact"><span class="meta">Degree</span><strong>B.E. Computer Science</strong></div>
+          <div class="fact"><span class="meta">Expected graduation</span><strong>2028</strong></div>
+          <div class="fact"><span class="meta">Current CGPA</span><strong>8.25</strong></div>
+          <div class="fact"><span class="meta">Phone</span><strong>+91 8248943631</strong></div>
+        </aside>
+      </div>
+
+      <section id="projects">
+        <div class="section-head">
+          <p class="section-label">Selected work / 01</p>
+          <div><h2>Projects</h2><p class="section-intro">A few applications and concepts I have worked on through coursework, internship tasks, and hackathons.</p></div>
+        </div>
+        <div class="projects">
+          <article class="project">
+            <div class="project-index">01</div>
+            <div><h3>HeritageHolo</h3><p>SIH 2026 intra-college qualifier project concept for an offline temple guide using BLE-triggered content, TinyML, and a holographic display. I initiated the idea, prepared the presentation, and reviewed the concept through questions in team discussions.</p></div>
+            <div class="stack">SIH 2026 · IoT concept</div>
+          </article>
+          <article class="project">
+            <div class="project-index">02</div>
+            <div><h3>University CGPA Management System</h3><p>Developed a system to manage university CGPA records using Java and Spring Boot.</p></div>
+            <div class="stack">Java · Spring Boot</div>
+          </article>
+          <article class="project">
+            <div class="project-index">03</div>
+            <div><h3>Student Grade Tracker</h3><p>Console application for recording student marks, validating input, saving records to CSV, and reporting class average, highest marks, and lowest marks.</p><a class="repo" href="https://github.com/jagadeeshwaran2312/CodeAlpha_Student-Grade-Tracker" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
+            <div class="stack">Java · CSV files</div>
+          </article>
+          <article class="project">
+            <div class="project-index">04</div>
+            <div><h3>Rule-Based Chatbot</h3><p>JavaFX desktop chatbot with predefined intents and replies, text normalization, and keyword matching.</p><a class="repo" href="https://github.com/jagadeeshwaran2312/CodeAlpha_ArtificialIntelligenceChatbot" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
+            <div class="stack">Java · JavaFX</div>
+          </article>
+          <article class="project">
+            <div class="project-index">05</div>
+            <div><h3>Hotel Reservation System</h3><p>JavaFX app for searching room availability, displaying rates, booking rooms, and cancelling reservations. Booking records are saved to a text file.</p><a class="repo" href="https://github.com/jagadeeshwaran2312/CodeAlpha_Hotel_Reservation_System" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
+            <div class="stack">Java · JavaFX · File handling</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-head">
+          <p class="section-label">Background / 02</p>
+          <div><h2>Experience & education</h2><p class="section-intro">Currently studying Computer Science Engineering and building experience through project work.</p></div>
+        </div>
+        <div class="two-col">
+          <article class="timeline-item">
+            <span class="date">January 2026 · Virtual</span>
+            <h3>Java Programming Intern</h3>
+            <p><strong>CodeAlpha</strong><br>Completed a one-month Java programming internship and developed three Java projects: Student Grade Tracker, Chatbot, and Hotel Reservation System.</p>
+          </article>
+          <article class="timeline-item">
+            <span class="date">2024–2028</span>
+            <h3>B.E. Computer Science and Engineering</h3>
+            <p><strong>PSNA College of Engineering and Technology</strong><br>CGPA: 8.25</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="section-head">
+          <p class="section-label">Tools / 03</p>
+          <div><h2>Technical skills</h2><p class="section-intro">Technologies and concepts listed from my coursework and project experience.</p></div>
+        </div>
+        <div class="skill-list">
+          <div class="skill-row"><strong>Languages</strong><span>Java, Python, C</span></div>
+          <div class="skill-row"><strong>Frameworks & UI</strong><span>Spring Boot, JavaFX</span></div>
+          <div class="skill-row"><strong>Databases</strong><span>MySQL, MongoDB</span></div>
+          <div class="skill-row"><strong>Core concepts</strong><span>Data Structures and Algorithms, Object-Oriented Programming, DBMS, Computer Networks</span></div>
+          <div class="skill-row"><strong>Tools</strong><span>VS Code, Git, GitHub</span></div>
+        </div>
+      </section>
+
+      <section id="recognition">
+        <div class="section-head">
+          <p class="section-label">Learning / 04</p>
+          <div><h2>Certifications & activities</h2><p class="section-intro">Selected courses, badges, and team activities.</p></div>
+        </div>
+        <div class="credentials">
+          <div class="credential"><strong>NPTEL · Programming in Java</strong><span>Elite Gold · Jan–Apr 2026</span></div>
+          <div class="credential"><strong>Oracle Academy · Java Programming</strong><span>October 2025</span></div>
+          <div class="credential"><strong>AWS Academy · Cloud Foundations</strong><span>20-hour training badge</span></div>
+          <div class="credential"><strong>Snowflake workshop badges</strong><span>Data Science, Data Engineering, Data Warehousing, Data Application Builders, Data Lake, and Collaboration, Marketplace & Cost Estimation · October 2026</span></div>
+          <div class="credential"><strong>Dreams Unbroken / CII</strong><span>Foundation Course on Applied Machine Learning and AI · June 2026</span></div>
+          <div class="credential"><strong>MongoDB Skillathon</strong><span>RAG with MongoDB, AI Agents with MongoDB, Vector Search Fundamentals, MongoDB Basics for Students, and AI Data Strategy with MongoDB · July 2026</span></div>
+        </div>
+        <div class="activities" style="margin-top:28px">
+          <div class="activity"><strong>SIH 2026</strong><span>Participated in the intra-college qualifier with HeritageHolo.</span></div>
+          <div class="activity"><strong>KPR National-Level Hackathon</strong><span>Participated as part of a team.</span></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer id="contact">
+    <div class="wrap footer-inner">
+      <div><p class="eyebrow" style="color:#e0a58e;margin:0 0 8px">Get in touch</p><h2>Let’s talk about building software.</h2><p>For internships, projects, or a conversation about Java development.</p></div>
+      <div class="footer-links"><a href="https://drive.google.com/file/d/1GXqB3Z-YM1Tqw0vpgHXqEgB0hpOxBknW/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Resume</a><a href="mailto:jagadeesh2waran@gmail.com">Email</a><a href="https://www.linkedin.com/in/jagadeeshwaran-ag" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/jagadeeshwaran2312" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div>
+  </footer>
+</body>
+</html>
+
